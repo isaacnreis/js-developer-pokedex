@@ -1,0 +1,277 @@
+.pokemonInfo {
+    box-sizing: border-box;
+    height: 99vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.info__header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    padding: 1rem;
+    background-color: inherit;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.info__header img {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    filter: invert(100%);
+}
+
+#heart {
+    filter: invert(26%) sepia(62%) saturate(7376%) hue-rotate(353deg) brightness(95%) contrast(125%);
+}
+
+/* Detalhes parte superior */
+.info__top {
+    background: url("../../img/pokeball.svg") no-repeat center / contain;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.info__util {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.info__gif {
+    position: absolute;
+    z-index: 2;
+}
+
+.info__photo {
+    position: relative;
+    left: 20%;
+    top: 10%;
+    height: 300px;
+    width: 300px;
+    z-index: 2;
+}
+
+.info__name {
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+}
+
+.info__id {
+    color: #fff
+}
+
+.info__types {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.info__type{
+    border-radius: 1rem;
+    color: #fff;
+    font-size: 0.825rem;
+    filter: brightness(1.1);
+    list-style: none;
+    margin: .25rem 0;
+    padding: .25rem .5rem;
+    text-align: center;
+}
+
+
+/* Informações fundo branco  */
+
+.info{
+    background-color: #fff;
+    border-radius: 1.5rem;
+    height: 80%;
+    position: relative;
+    z-index: 0;
+}
+
+.info li {
+    list-style: none;
+}
+
+.info__menu {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.info__title {
+    margin-top: 3rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    outline: none;
+    font-size: 1.2rem;
+}
+
+.info__title:focus {
+    border-bottom: 1px solid blue;  
+}
+
+.info__info {
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 1rem;
+    position: absolute;
+    top: 8rem;
+    left: 2rem;
+    width: 80%;
+}
+
+.info__info li {
+    margin-bottom: 1rem;
+}
+
+.info__title:focus + .ai{
+    display: flex;
+    flex-direction: column;
+}
+
+.info__title:focus + .ei{
+    display: flex;
+    flex-direction: row;
+}
+
+.info__title:focus + .mi{
+    display: flex;
+    flex-direction: column;
+}
+
+.ai, .ei, .mi {
+    display: none;
+}
+
+.ei {
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.info__results {
+    color: black;
+    margin-left: 2rem;
+}
+
+.ei li {
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.11);
+    lighting-color: 1.1;
+    border-radius: 1rem;
+    padding: 0.325rem 0.625rem;
+}
+
+.ei .info__results {
+    margin: 0;
+} 
+
+/* Media queries tela info */
+
+
+
+@media screen and (max-width: 400px) {
+    .info__photo {
+        left: 20%;
+        top: 10%;
+        height: 240px;
+        width: 240px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .info__photo {
+        left: 15vw;
+        top: 15%;
+        height: 150px;
+        width: 150px;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .info__photo {
+        left: 25vw;
+        top: 10%;
+    }
+
+    .info__top {
+        margin: 0 auto;
+    }
+
+    .info__util {
+        margin: 0 2rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .pokemonInfo {
+        border-radius: 4rem;
+    }
+    .info__top {
+        max-width: 992px;
+    }
+
+    .info__header {
+        max-width: 992px;
+        padding: 1rem;
+        background-color: inherit;
+        border-radius: 4rem 4rem 0 0;
+        margin: 0 auto;
+    }
+
+    .info__photo {
+        left: 35vw;
+        top: 10%;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .pokemonInfo {
+        border-radius: 4rem;
+    }
+    .info__top {
+        height: 35vh;
+    }
+
+    .info__header {
+        padding: 1rem 2rem;
+        margin: 0 auto;
+    }
+
+    .info__info {
+        top: 5.8rem;
+    }
+
+    .info__title:focus + .ai{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    .info__title:focus + .ei{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    .info__title:focus + .mi{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .info__photo {
+        left: 40vw;
+        top: -15%;
+        height: 150px;
+        width: 150px;
+    }
+}
